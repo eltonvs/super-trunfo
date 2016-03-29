@@ -8,9 +8,9 @@ void Construtor(){
 
  void displayCard(){
  	cout<< "ID: " << id 
- 		<< "\nName: "<< name
- 		<<"\nfabricante e pais de origem: "<< origem
- 		"\nAno: "<< year
- 		"\ncomprimento: "<< comprimento
- 		"\nEnvergadura: "<< envergadura<< endl;
+ 		<< "\nName: "<<card[name]
+ 		<<"\nfabricante e pais de origem: "<<card[ origem]
+ 		"\nAno: "<< card[year]
+ 		"\ncomprimento: "<< card[comprimento]
+ 		"\nEnvergadura: "<< card[envergadura]<< endl;
  }
