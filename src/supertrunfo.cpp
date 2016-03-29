@@ -7,7 +7,6 @@
 
 int main(int argc, char const *argv[]) {
     std::string cardsFileName;  // Holds the cards file name .
-    std::ifstream inputFile;
     auto N_PLAYERS(0), N_CARDS(0);
     if (argc > 1) {
         cardsFileName = argv[1];
@@ -18,12 +17,12 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    std::ifstream inputFile;
     ST_Game myGame;
     if (!myGame.readDeckFromFile(inputFile)) {
         std::cerr << "The informed file cannot be opened\n";
         exit(EXIT_FAILURE);
     }
-
 
     std::cout << cardsFileName << "\n";
     std::cout << N_PLAYERS << "\n";

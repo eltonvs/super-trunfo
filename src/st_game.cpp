@@ -1,8 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include "st_game.hpp"
 
 // Methods
-bool readDeckFromFile(std::ifstream &_file, std::string file_name) {
+bool ST_Game::readDeckFromFile(std::ifstream &_file) {
     //_file.open("data/" + file_name);
     return true;
 }

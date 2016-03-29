@@ -10,7 +10,7 @@ class ST_Game {
     // Methods
     int run();
     std::string winner();
-    bool readDeckFromFile(std::ifstream, std::string);
+    bool readDeckFromFile(std::ifstream &);
     void addPlayer(ST_Player);
     void dealCards(int);
     void displayDeck();
