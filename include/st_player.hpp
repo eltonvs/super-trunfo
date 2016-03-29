@@ -9,13 +9,13 @@ class ST_Player {
     // Constructor
     ST_Player(std::string name);
     // Getters
-    std::string get_name();
+    std::string name();
     int get_nCards();
     // Setters
     void addCard(ST_Card);
     // Methods
     ST_Card pop_card();
-    int chooseRandomAttrib();
+    ST_Card::attribute_t chooseRandomAttrib();
     void displayCards();
 
  private:

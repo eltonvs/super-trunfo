@@ -6,6 +6,14 @@
 #include "st_game.hpp"
 
 // Methods
+int ST_Game::run() {
+    return 0;
+}
+
+ST_Player* ST_Game::winner() {
+    return (this->m_players.size() == 1) ? &this->m_players[0] : NULL;
+}
+
 bool ST_Game::readDeckFromFile(std::ifstream &_file) {
     if (!_file.is_open())
         return false;
@@ -73,7 +81,7 @@ void ST_Game::displayDeck() {
 void ST_Game::displayPlayers (){
     for (auto i(0u); i < this->m_players.size(); i++) {
         if (this->m_players[i].get_nCards() > 0) {
-            std::cout << "Player " << '"' << this->m_players[i].get_name() << '"'
+            std::cout << "Player " << '"' << this->m_players[i].name() << '"'
                       << " still active, have " << this->m_players[i].get_nCards()
                       << " cards in hand, and they are:\n";
             this->m_players[i].displayCards();

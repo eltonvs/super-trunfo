@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include <vector>
+#include <ctime>
 #include "st_player.hpp"
 
 // Constructor
@@ -9,7 +11,7 @@ ST_Player::ST_Player(std::string name) {
 }
 
 // Getters
-std::string ST_Player::get_name() {
+std::string ST_Player::name() {
     return this->m_name;
 }
 int ST_Player::get_nCards() {
@@ -26,15 +28,21 @@ ST_Card ST_Player::pop_card() {
     std::vector <std::string> card;
     for (auto i(0u); i < ST_Card::N_ATTR; i++)
         card.push_back(this->m_cards[0].getAttribute((ST_Card::attribute_t)i));
-
     ST_Card r(card);
+
     this->m_cards.erase(this->m_cards.begin());
 
     return r;
 }
 
+ST_Card::attribute_t ST_Player::chooseRandomAttrib() {
+    std::srand(std::time(0)); // use current time as seed for random generator
+    int random_int = std::rand();
+    return (ST_Card::attribute_t)((random_int%4) + 4);
+}
+
 void ST_Player::displayCards() {
-        std::cout << "====+================================+"
+    std::cout << "====+================================+"
               << "==============================+==========+"
               << "=======+=======+========+=========\n";
     std::cout << std::fixed << std::left
