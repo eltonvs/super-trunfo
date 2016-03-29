@@ -10,14 +10,14 @@ int main(int argc, char const *argv[]) {
     auto N_PLAYERS(0), N_CARDS(0);
     if (argc > 1) {
         cardsFileName = argv[1];
-        N_PLAYERS = std::stoi(argv[2]);
-        N_CARDS = std::stoi(argv[3]);
+        N_PLAYERS     = std::stoi(argv[2]);
+        N_CARDS       = std::stoi(argv[3]);
     } else {
         std::cerr << "No file specified\n";
         exit(EXIT_FAILURE);
     }
 
-    std::ifstream inputFile;
+    std::ifstream inputFile("data/" + cardsFileName);
     ST_Game myGame;
     if (!myGame.readDeckFromFile(inputFile)) {
         std::cerr << "The informed file cannot be opened\n";

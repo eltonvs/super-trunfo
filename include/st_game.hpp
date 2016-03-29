@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "st_player.hpp"
+#include "st_card.hpp"
 
 class ST_Game {
  public:
@@ -20,6 +21,7 @@ class ST_Game {
 
  private:
     std::vector <ST_Player> m_players;
+    std::vector <ST_Card> m_cards;
 };
 
 #endif
