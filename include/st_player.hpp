@@ -12,7 +12,7 @@ class ST_Player {
     std::string get_name();
     int get_nCards();
     // Setters
-    void addCard();
+    void addCard(ST_Card);
     // Methods
     ST_Card pop_card();
     int chooseRandomAttrib();

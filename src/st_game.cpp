@@ -13,7 +13,7 @@ bool ST_Game::readDeckFromFile(std::ifstream &_file) {
     while (!_file.eof()) {
         std::vector <std::string> attr(ST_Card::N_ATTR);
         std::string buf;
-        
+
         std::getline(_file, attr[ST_Card::ID]);
         std::getline(_file, attr[ST_Card::NAME]);
         std::getline(_file, attr[ST_Card::COMPANY]);
@@ -23,9 +23,26 @@ bool ST_Game::readDeckFromFile(std::ifstream &_file) {
         std::getline(_file, attr[ST_Card::LENGTH]);
         std::getline(_file, attr[ST_Card::WINGSPAN]);
         std::getline(_file, buf);
-        
+
         this->m_cards.push_back(attr);
     }
+
+    return true;
+}
+
+void ST_Game::addPlayer(ST_Player *_p) {
+    this->m_players.push_back(*_p);
+}
+
+bool ST_Game::dealCards(int k) {
+    auto n_players = this->m_players.size();
+    // Run tests
+    if (this->m_cards.size() < k*n_players)
+        return false;
+
+    for (int i = 0; i < k; i++)
+        for (auto j(0u); j < n_players; j++)
+            this->m_players[j].addCard(this->m_cards[i*n_players+j]);
 
     return true;
 }

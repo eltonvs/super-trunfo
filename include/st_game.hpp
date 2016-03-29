@@ -12,8 +12,8 @@ class ST_Game {
     int run();
     std::string winner();
     bool readDeckFromFile(std::ifstream &);
-    void addPlayer(ST_Player);
-    void dealCards(int);
+    void addPlayer(ST_Player *);
+    bool dealCards(int);
     void displayDeck();
     void displayPlayers();
     void displayStatusRound();

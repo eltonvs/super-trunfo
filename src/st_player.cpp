@@ -13,3 +13,8 @@ std::string ST_Player::get_name() {
 int ST_Player::get_nCards() {
     return this->m_cards.size();
 }
+
+// Setters
+void ST_Player::addCard(ST_Card _card) {
+    this->m_cards.push_back(_card);
+}

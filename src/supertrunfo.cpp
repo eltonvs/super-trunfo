@@ -30,6 +30,15 @@ int main(int argc, char const *argv[]) {
     std::cout << N_PLAYERS << "\n";
     std::cout << N_CARDS << "\n";
 
+    myGame.addPlayer(new ST_Player("Player #1"));
+    myGame.addPlayer(new ST_Player("Player #2"));
+    myGame.addPlayer(new ST_Player("Player #3"));
+
+    if (!myGame.dealCards(N_CARDS)) { // Deals N_CARDS to each player.
+        std::cerr << "Error at dealCards()\n";
+        exit(EXIT_FAILURE);
+    }
+
     return EXIT_SUCCESS;
 }
 
