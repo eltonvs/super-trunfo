@@ -11,5 +11,5 @@ std::string ST_Player::get_name() {
     return this->m_name;
 }
 int ST_Player::get_nCards() {
-    return this->m_nCards;
+    return this->m_cards.size();
 }

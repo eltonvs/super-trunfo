@@ -20,7 +20,7 @@ class ST_Player {
 
  private:
     std::string m_name;
-    int m_nCards;
+    std::vector <ST_Card> m_cards;
 };
 
 #endif
