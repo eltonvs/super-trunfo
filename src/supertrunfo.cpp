@@ -1,11 +1,26 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "st_card.hpp"
 #include "st_game.hpp"
 #include "st_player.hpp"
 
 int main(int argc, char const *argv[]) {
-    // Code Here
+    std::string cardsFileName;  // Holds the cards file name .
+    std::ifstream inputFile;
+    auto N_PLAYERS(0), N_CARDS(0);
+    if (argc > 1) {
+        cardsFileName = argv[1];
+        N_PLAYERS = std::stoi(argv[2]);
+        N_CARDS = std::stoi(argv[3]);
+    }
+
+    ST_Card carta("A1", "Boeing 737-2C3/Adv", "Cruzeiro - Brazil", 1967, 927, 4260, 30.53, 28.35);
+    carta.displayCard();
+
+    std::cout << cardsFileName << "\n";
+    std::cout << N_PLAYERS << "\n";
+    std::cout << N_CARDS << "\n";
 
     return EXIT_SUCCESS;
 }
