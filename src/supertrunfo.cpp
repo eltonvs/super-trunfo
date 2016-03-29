@@ -5,6 +5,8 @@
 #include "st_game.hpp"
 #include "st_player.hpp"
 
+const std::vector <std::string> attr_names = {"ID", "NAME", "COMPANY", "YEAR", "SPEED", "RANGE", "LENGTH", "WINGSPAN"};
+
 int main(int argc, char const *argv[]) {
     std::string cardsFileName;  // Holds the cards file name.
     auto N_PLAYERS(0), N_CARDS(0);
@@ -26,9 +28,8 @@ int main(int argc, char const *argv[]) {
 
     std::cout << "\nWelcome to Super Trunfo! copyright DIMAp/IMD, 2016.\n"
               << "# of players: " << N_PLAYERS << "\n"
-              << "# of cards per player:" << N_CARDS << "\n\n";
+              << "# of cards per player: " << N_CARDS << "\n\n";
 
-    std::cout << ">>> The deck of ST cards read from file:\n";
     // (3): Show deck on screen.
     myGame.displayDeck();
 
@@ -48,7 +49,7 @@ int main(int argc, char const *argv[]) {
 
     // (7): Get winner and display the winner.
     auto winner = myGame.winner();
-    std::cout << "\n\n>>> The winner after " << nRounds
+    std::cout << ">>> The winner after " << nRounds
               << " rounds played is : \"" << winner->name() << "\"\n\n";
 
     return EXIT_SUCCESS;

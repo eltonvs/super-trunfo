@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+extern const std::vector <std::string> attr_names;
+
 class ST_Card {
  public:
     enum attribute_t {ID, NAME, COMPANY, YEAR, SPEED, RANGE, LENGTH, WINGSPAN, N_ATTR};

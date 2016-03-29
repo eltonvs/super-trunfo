@@ -20,8 +20,11 @@ class ST_Game {
     void displayCardsOnTable();
 
  private:
+    int m_curr_player = 0;
+    ST_Card::attribute_t m_chosen_attr;
     std::vector <ST_Player> m_players;
     std::vector <ST_Card> m_cards;
+    std::vector <ST_Card> m_table_cards;
 };
 
 #endif
