@@ -3,6 +3,24 @@
 
 class ST_Card {
  public:
+ 	readDeckFromFile();
+ 	
+ 	addPlayer();
+
+ 	dealCards(k);
+
+ 	displayDeck();
+
+ 	displayPlayers();
+
+ 	run();
+
+ 	displayStatusRound();
+
+ 	displayCardsOnTable();
+
+ 	winner();
+
  private:
 };
 
