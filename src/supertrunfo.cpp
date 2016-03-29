@@ -26,10 +26,6 @@ int main(int argc, char const *argv[]) {
 
     myGame.displayDeck();
 
-    std::cout << cardsFileName << "\n";
-    std::cout << N_PLAYERS << "\n";
-    std::cout << N_CARDS << "\n";
-
     myGame.addPlayer(new ST_Player("Player #1"));
     myGame.addPlayer(new ST_Player("Player #2"));
     myGame.addPlayer(new ST_Player("Player #3"));
