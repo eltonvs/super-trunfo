@@ -8,20 +8,17 @@ class ST_Card {
  public:
     enum attribute_t {ID, NAME, COMPANY, YEAR, SPEED, RANGE, LENGTH, WINGSPAN, N_ATTR};
 
+    // Constructors
     ST_Card(std::string, std::string, std::string, int, int, int, float, float);
     ST_Card(std::vector<std::string>);
+
+    // Getter
     std::string getAttribute(attribute_t);
+
+    // Method
     void displayCard();
 
  private:
-    std::string m_id;
-    std::string m_name;
-    std::string m_company;
-    int m_year;
-    int m_speed;
-    int m_range;
-    float m_length;
-    float m_wingspan;
     std::vector<std::string> m_attr;
 };
 
