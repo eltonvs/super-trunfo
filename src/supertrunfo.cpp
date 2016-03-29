@@ -39,6 +39,8 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    myGame.displayPlayers();
+
     return EXIT_SUCCESS;
 }
 

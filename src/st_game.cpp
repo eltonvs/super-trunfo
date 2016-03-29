@@ -65,4 +65,19 @@ void ST_Game::displayDeck() {
               << "=======+=======+========+=========\n";
     for (auto i(0u); i < this->m_cards.size(); i++)
         this->m_cards[i].displayCard();
+    std::cout << "----+--------------------------------+"
+              << "------------------------------+----------+"
+              << "-------+-------+--------+---------\n";
+}
+
+void ST_Game::displayPlayers (){
+    for (auto i(0u); i < this->m_players.size(); i++) {
+        if (this->m_players[i].get_nCards() > 0) {
+            std::cout << "Player " << '"' << this->m_players[i].get_name() << '"'
+                      << " still active, have " << this->m_players[i].get_nCards()
+                      << " cards in hand, and they are:\n";
+            this->m_players[i].displayCards();
+            std::cout << std::endl;
+        }
+    }
 }
