@@ -13,10 +13,17 @@ int main(int argc, char const *argv[]) {
         cardsFileName = argv[1];
         N_PLAYERS = std::stoi(argv[2]);
         N_CARDS = std::stoi(argv[3]);
+    } else {
+        std::cerr << "No file specified\n";
+        exit(EXIT_FAILURE);
     }
 
-    ST_Card carta("A1", "Boeing 737-2C3/Adv", "Cruzeiro - Brazil", 1967, 927, 4260, 30.53, 28.35);
-    carta.displayCard();
+    ST_Game myGame;
+    if (!myGame.readDeckFromFile(inputFile)) {
+        std::cerr << "The informed file cannot be opened\n";
+        exit(EXIT_FAILURE);
+    }
+
 
     std::cout << cardsFileName << "\n";
     std::cout << N_PLAYERS << "\n";
@@ -33,7 +40,7 @@ int main (int argc, char *argv[]) {
     // (1): Process any command line arguments .
     // (2): Create a game object .
     ST_Game myGame;
-    if (!myGame.reaDeckFromFile(inputFile)) {
+    if (!myGame.readDeckFromFile(inputFile)) {
         // ERROR MESSAGE GOES HERE .
     }
     // (3): Show deck on screen .

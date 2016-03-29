@@ -8,7 +8,7 @@ class ST_Card {
     enum attribute_t {ID, NAME, ORIGIN, YEAR, SPEED, RANGE, LENGTH, WINGSPAN, N_ATTR};
 
     ST_Card(std::string, std::string, std::string, int, int, int, float, float);
-    std::string getAttribute(int);
+    std::string getAttribute(attribute_t);
     void displayCard();
 
  private:
