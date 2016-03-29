@@ -1,5 +1,9 @@
 # Super Trunfo
 
+## Autores
+ - Elton de Souza Vieira
+ - Pedro Arthur Medeiros Fernandes
+
 ## Como compilar
 Run:
 ```
