@@ -14,7 +14,7 @@ class ST_Card {
  private:
     std::string m_id;
     std::string m_name;
-    std::string m_origin;
+    std::string m_company;
     int m_year;
     int m_speed;
     int m_range;
