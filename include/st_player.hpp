@@ -2,6 +2,7 @@
 #define _ST_Player_
 
 #include <string>
+#include "st_card.hpp"
 
 class ST_Player {
  public:
