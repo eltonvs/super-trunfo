@@ -24,6 +24,8 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    myGame.displayDeck();
+
     std::cout << cardsFileName << "\n";
     std::cout << N_PLAYERS << "\n";
     std::cout << N_CARDS << "\n";
