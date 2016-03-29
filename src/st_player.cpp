@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <vector>
 #include "st_player.hpp"
 
 // Constructor
@@ -21,6 +22,17 @@ void ST_Player::addCard(ST_Card _card) {
 }
 
 // Methods
+ST_Card ST_Player::pop_card() {
+    std::vector <std::string> card;
+    for (auto i(0u); i < ST_Card::N_ATTR; i++)
+        card.push_back(this->m_cards[0].getAttribute((ST_Card::attribute_t)i));
+
+    ST_Card r(card);
+    this->m_cards.erase(this->m_cards.begin());
+
+    return r;
+}
+
 void ST_Player::displayCards() {
         std::cout << "====+================================+"
               << "==============================+==========+"
