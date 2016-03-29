@@ -42,24 +42,31 @@ ST_Card::attribute_t ST_Player::chooseRandomAttrib() {
 }
 
 void ST_Player::displayCards() {
-    std::cout << "====+================================+"
-              << "==============================+==========+"
-              << "=======+=======+========+=========\n";
-    std::cout << std::fixed << std::left
+    std::cout << std::string(4, ' ')
+              << std::string(4, '=')  << "+" << std::string(32, '=') << "+"
+              << std::string(30, '=') << "+" << std::string(10, '=') << "+"
+              << std::string(7, '=')  << "+" << std::string(7, '=')  << "+"
+              << std::string(8, '=')  << "+" << std::string(9, '=')  << "\n";
+    std::cout << std::string(4, ' ')
+              << std::fixed << std::left
               << "ID  | "
-              << std::setw(30) << "NAME" << " | "
-              << std::setw(28) << "COMPANY"<< " | "
-              << std::setw(8) << "MFR_YEAR" << " | "
-              << std::setw(5) << "SPEED" << " | "
-              << std::setw(5) << "RANGE" << " | "
-              << std::setw(6) << "LENGTH" << " | "
-              << std::setw(6) << "WINGSPAN" << std::endl;
-    std::cout << "====+================================+"
-              << "==============================+==========+"
-              << "=======+=======+========+=========\n";
+              << std::setw(30) << "NAME"     << " | "
+              << std::setw(28) << "COMPANY"  << " | "
+              << std::setw(8)  << "MFR_YEAR" << " | "
+              << std::setw(5)  << "SPEED"    << " | "
+              << std::setw(5)  << "RANGE"    << " | "
+              << std::setw(6)  << "LENGTH"   << " | "
+              << std::setw(6)  << "WINGSPAN" << std::endl;
+    std::cout << std::string(4, ' ')
+              << std::string(4, '=')  << "+" << std::string(32, '=') << "+"
+              << std::string(30, '=') << "+" << std::string(10, '=') << "+"
+              << std::string(7, '=')  << "+" << std::string(7, '=')  << "+"
+              << std::string(8, '=')  << "+" << std::string(9, '=')  << "\n";
     for (auto i(0u); i < this->m_cards.size(); i++)
         this->m_cards[i].displayCard();
-    std::cout << "----+--------------------------------+"
-              << "------------------------------+----------+"
-              << "-------+-------+--------+---------\n";
+    std::cout << std::string(4, ' ')
+              << std::string(4, '-')  << "+" << std::string(32, '-') << "+"
+              << std::string(30, '-') << "+" << std::string(10, '-') << "+"
+              << std::string(7, '-')  << "+" << std::string(7, '-')  << "+"
+              << std::string(8, '-')  << "+" << std::string(9, '-')  << "\n";
 }

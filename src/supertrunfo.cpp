@@ -24,6 +24,11 @@ int main(int argc, char const *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    std::cout << "\nWelcome to Super Trunfo! copyright DIMAp/IMD, 2016.\n"
+              << "# of players: " << N_PLAYERS << "\n"
+              << "# of cards per player:" << N_CARDS << "\n\n";
+
+    std::cout << ">>> The deck of ST cards read from file:\n";
     // (3): Show deck on screen.
     myGame.displayDeck();
 
