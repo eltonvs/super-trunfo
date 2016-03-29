@@ -35,11 +35,11 @@ $(BIN_DIR)/$(SRC2).o: $(SRC_DIR)/$(SRC2).cpp
 	$(CXX) $(CFLAGS) -c $(SRC_DIR)/$(SRC2).cpp -I $(INCLUDE_DIR) -o $(BIN_DIR)/$(SRC2).o
 
 $(BIN_DIR)/$(SRC3).o: $(SRC_DIR)/$(SRC3).cpp
-	@echo "Creating object file 2"
+	@echo "Creating object file 3"
 	$(CXX) $(CFLAGS) -c $(SRC_DIR)/$(SRC3).cpp -I $(INCLUDE_DIR) -o $(BIN_DIR)/$(SRC3).o
 
 $(BIN_DIR)/$(SRC4).o: $(SRC_DIR)/$(SRC4).cpp
-	@echo "Creating object file 2"
+	@echo "Creating object file 4"
 	$(CXX) $(CFLAGS) -c $(SRC_DIR)/$(SRC4).cpp -I $(INCLUDE_DIR) -o $(BIN_DIR)/$(SRC4).o
 
 clean:
