@@ -1,8 +1,7 @@
 #include <iostream>
 #include <iomanip>
-#include <cstdlib>
+#include <random>
 #include <vector>
-#include <ctime>
 #include "st_player.hpp"
 
 // Constructor
@@ -36,8 +35,8 @@ ST_Card ST_Player::pop_card() {
 }
 
 ST_Card::attribute_t ST_Player::chooseRandomAttrib() {
-    std::srand(std::time(0)); // use current time as seed for random generator
-    int random_int = std::rand();
+    std::random_device r;
+    int random_int = abs(r());
     return (ST_Card::attribute_t)((random_int%4) + 4);
 }
 
