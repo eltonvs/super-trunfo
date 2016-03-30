@@ -56,11 +56,11 @@ $ ./bin/debug input_file N_PLAYERS N_CARDS
  - Argumentos por linha de comando;
  - Busca Sequencial;
  - Funções do STL:
-   - *std::setw()*          // Para o ajuste da largura das tabelas (exibição)
-   - *std::setprecision()*  // Para mostrar os números com apenas 2 casas decimais
-   - *std::stoi()*          // Para a conversão de string para inteiro
-   - *std::stod()*          // Para a conversão de string para double
-   - *std::shuffle()*       // Para embaralhar as cartas antes de distribuí-las
+   - `std::setw()`          // Para o ajuste da largura das tabelas (exibição)
+   - `std::setprecision()`  // Para mostrar os números com apenas 2 casas decimais
+   - `std::stoi()`          // Para a conversão de string para inteiro
+   - `std::stod()`          // Para a conversão de string para double
+   - `std::shuffle()`       // Para embaralhar as cartas antes de distribuí-las
 
 
 ## Bugs/Limitações
