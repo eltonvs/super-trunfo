@@ -28,12 +28,13 @@ $ make
 E para executar:
 
 ```
-$ ./bin/supertrunfo input_file N_PLAYERS N_CARDS
+$ ./bin/supertrunfo input_file N_PLAYERS N_CARDS IA_FLAG
 ```
 
  * Sendo `input_file` o arquivo de entrada com as informações sobre as cartas,
-   `N_PLAYERS` o número de jogadores e `N_CARDS` o número de cartas a ser
-   distribuído entre eles
+   `N_PLAYERS` o número de jogadores, `N_CARDS` o número de cartas a ser
+   distribuído entre eles e `IA_FLAG` um modificador (`-ai`) que, caso inserido, ativa
+   a "inteligência artificial" do jogo.
 
 ### Debug
 Caso você queira compilar uma versão para debug (com o `-g` e `-O0`), execute:
