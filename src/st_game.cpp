@@ -61,7 +61,7 @@ int ST_Game::run(bool IA) {
         for (auto i(0u); i < this->m_players.size(); i++)
             if (this->m_players[i].get_nCards() == 0) {
                 this->m_players.erase(this->m_players.begin() + i);
-                i = 0;
+                i--;
             }
 
         // Clear table
