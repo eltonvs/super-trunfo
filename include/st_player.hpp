@@ -17,6 +17,7 @@ class ST_Player {
     ST_Card pop_card();
     ST_Card::attribute_t chooseRandomAttrib();
     void displayCards();
+    void chooseCardAI(ST_Card::attribute_t);
 
  private:
     std::string m_name;

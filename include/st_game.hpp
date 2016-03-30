@@ -9,7 +9,7 @@
 class ST_Game {
  public:
     // Methods
-    int run();
+    int run(bool = false);
     ST_Player* winner();
     bool readDeckFromFile(std::ifstream &);
     void addPlayer(ST_Player *);

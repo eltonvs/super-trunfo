@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <iomanip>
 #include <random>
@@ -68,4 +69,23 @@ void ST_Player::displayCards() {
               << std::string(30, '-') << "+" << std::string(10, '-') << "+"
               << std::string(7, '-')  << "+" << std::string(7, '-')  << "+"
               << std::string(8, '-')  << "+" << std::string(9, '-')  << "\n";
+}
+
+void ST_Player::chooseCardAI(ST_Card::attribute_t attrib) {
+    // Define best option
+    auto position(0u);
+
+    double max_val = std::stod(this->m_cards[0].getAttribute(attrib));
+    for (auto i(1u); i < this->m_cards.size(); i++)
+        if (std::stod(this->m_cards[i].getAttribute(attrib)) > max_val)
+            position = i,
+            max_val  = std::stod(this->m_cards[i].getAttribute(attrib));
+
+    // Verify ST card
+    for (auto i(0u); i < this->m_cards.size(); i++)
+        if (this->m_cards[i].getAttribute(ST_Card::ID) == "ST")
+            position = i;
+
+    // Swap the cards with your first card of deck
+    std::swap(this->m_cards[0], this->m_cards[position]);
 }

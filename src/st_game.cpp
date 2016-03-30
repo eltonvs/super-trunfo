@@ -8,7 +8,7 @@
 #include "st_game.hpp"
 
 // Methods
-int ST_Game::run() {
+int ST_Game::run(bool IA) {
     int n_rounds = 0;
     int round_winner = 0;
 
@@ -25,8 +25,11 @@ int ST_Game::run() {
 
         this->displayPlayers();
         
-        for (auto i(0u); i < this->m_players.size(); i++)
+        for (auto i(0u); i < this->m_players.size(); i++) {
+            if (IA)
+                this->m_players[i].chooseCardAI(this->m_chosen_attr);
             this->m_table_cards.push_back(this->m_players[i].pop_card());
+        }
 
         this->displayCardsOnTable();
 

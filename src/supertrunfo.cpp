@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include <string>
 #include "st_card.hpp"
 #include "st_game.hpp"
@@ -10,10 +11,13 @@ const std::vector <std::string> attr_names = {"ID", "NAME", "COMPANY", "YEAR", "
 int main(int argc, char const *argv[]) {
     std::string cardsFileName;  // Holds the cards file name.
     auto N_PLAYERS(0), N_CARDS(0);
+    bool IA_FLAG = false;
     if (argc > 3) {
         cardsFileName = argv[1];
         N_PLAYERS     = std::stoi(argv[2]);
         N_CARDS       = std::stoi(argv[3]);
+        if (argc > 4)
+            IA_FLAG = (std::strcmp(argv[4], "-ai") == 0);
     } else {
         std::cerr << "No file specified\n";
         exit(EXIT_FAILURE);
@@ -23,6 +27,9 @@ int main(int argc, char const *argv[]) {
         std::cerr << "The number of cards/players cannot be less than 1\n";
         exit(EXIT_FAILURE);
     }
+    
+    if (IA_FLAG)
+        std::cout << ">>> Running with IA\n";
 
     std::ifstream inputFile("data/" + cardsFileName);
     ST_Game myGame;
@@ -49,7 +56,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // (6): Run a game with several rounds.
-    auto nRounds = myGame.run();
+    auto nRounds = myGame.run(IA_FLAG);
 
     // (7): Get winner and display the winner.
     auto winner = myGame.winner();
