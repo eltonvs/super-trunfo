@@ -12,6 +12,14 @@ e fica com todas as cartas usadas na rodada (colocando-as no fim de seu deck).
 
 O vencedor é o jogador que ficar com as cartas de todos os outros jogadores.
 
+### Inteligêcia Artificial
+Quando ativada, a dinâmica do jogo é alterada, pois ao invés de pegar sempre a
+primeira carta do deck de cada jogador, o programa procura em suas cartas a que
+possui o maior valor para o atributo escolhido na rodada. Dessa forma, a cada
+rodada, os jogadores farão a sua melhor opção de jogada.
+
+Caso o jogador possua uma carta "Super Trunfo" ela será a escolhida.
+
 ### Casos especiais:
  - Caso o identificador da carta seja **ST** (*Super Trunfo*), essa carta será
    automaticamente a vencedora da rodada, independente do valor de seus atributos
