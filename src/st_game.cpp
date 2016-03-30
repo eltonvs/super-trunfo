@@ -8,10 +8,14 @@
 // Methods
 int ST_Game::run() {
     int n_rounds = 0;
+    int round_winner = 0;
 
     while (this->m_players.size() > 1) {
         std::cout << std::string(100, '=') << "\n"
                   << ">>> Round #" << n_rounds + 1 << "\n\n";
+
+        // Define choosen attribute
+        this->m_chosen_attr = this->m_players[round_winner].chooseRandomAttrib();
 
         this->displayStatusRound();
 
@@ -25,7 +29,24 @@ int ST_Game::run() {
         this->displayCardsOnTable();
 
         // Define winner
-        int round_winner = 0;
+        round_winner = 0;
+        double max_val = std::stod(this->m_table_cards[0].getAttribute(this->m_chosen_attr));
+        for (auto i(1u); i < this->m_table_cards.size(); i++) {
+            if (std::stod(this->m_table_cards[i].getAttribute(this->m_chosen_attr)) > max_val) {
+                round_winner = i;
+                max_val = std::stod(this->m_table_cards[i].getAttribute(this->m_chosen_attr));
+            }
+        }
+
+        // Verify ST card
+        for (auto i(0u); i < this->m_table_cards.size(); i++) {
+            if (this->m_table_cards[i].getAttribute(ST_Card::ID) == "ST") {
+                round_winner = i;
+                for (auto j(0u); j < this->m_table_cards.size(); j++)
+                    if (j != i && this->m_table_cards[j].getAttribute(ST_Card::ID)[1] == '1')
+                        round_winner = j;
+            }
+        }
 
         std::cout << std::string(4, ' ') << "*** The winner of this round is player \""
                   << this->m_players[round_winner].name() << "\" ***\n\n";
@@ -34,9 +55,11 @@ int ST_Game::run() {
         for (auto i(0u); i < this->m_table_cards.size(); i++)
             this->m_players[round_winner].addCard(this->m_table_cards[i]);
 
-        for (auto i = this->m_players.size(); i > 0; i--)
-            if (this->m_players[i].get_nCards() == 0)
+        for (auto i(0u); i < this->m_players.size(); i++)
+            if (this->m_players[i].get_nCards() == 0) {
                 this->m_players.erase(this->m_players.begin() + i);
+                i = 0;
+            }
 
         // Clear table
         this->m_table_cards.clear();
