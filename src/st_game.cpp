@@ -36,12 +36,10 @@ int ST_Game::run(bool IA) {
         // Define winner
         round_winner = 0;
         double max_val = std::stod(this->m_table_cards[0].getAttribute(this->m_chosen_attr));
-        for (auto i(1u); i < this->m_table_cards.size(); i++) {
-            if (std::stod(this->m_table_cards[i].getAttribute(this->m_chosen_attr)) > max_val) {
-                round_winner = i;
+        for (auto i(1u); i < this->m_table_cards.size(); i++)
+            if (std::stod(this->m_table_cards[i].getAttribute(this->m_chosen_attr)) > max_val)
+                round_winner = i,
                 max_val = std::stod(this->m_table_cards[i].getAttribute(this->m_chosen_attr));
-            }
-        }
 
         // Verify ST card
         for (auto i(0u); i < this->m_table_cards.size(); i++) {
