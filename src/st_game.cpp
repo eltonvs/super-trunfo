@@ -1,8 +1,10 @@
+#include <algorithm>
 #include <iostream>
-#include <string>
-#include <vector>
 #include <iomanip>
 #include <fstream>
+#include <random>
+#include <string>
+#include <vector>
 #include "st_game.hpp"
 
 // Methods
@@ -108,9 +110,16 @@ bool ST_Game::dealCards(int k) {
     if (this->m_cards.size() < k*n_players)
         return false;
 
+    // Creates a auxiliar vetor to receive the shuffled vector
+    auto cards = this->m_cards;
+    // Creates a real random number
+    std::random_device r;
+    // Shuffle vector content using the random number as seed
+    std::shuffle(cards.begin(), cards.end(), std::default_random_engine(r()));
+
     for (int i = 0; i < k; i++)
         for (auto j(0u); j < n_players; j++)
-            this->m_players[j].addCard(this->m_cards[i*n_players+j]);
+            this->m_players[j].addCard(cards[i*n_players+j]);
 
     return true;
 }
