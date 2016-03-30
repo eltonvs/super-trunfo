@@ -55,10 +55,10 @@ $ ./bin/debug input_file N_PLAYERS N_CARDS
  - Strings;
  - Argumentos por linha de comando;
  - Funções do STL:
-   - std::setw()  // Para o ajuste da largura das tabelas (exibição)
-   - std::setprecision()  // Para mostrar os números com apenas 2 casas decimais
-   - std::stoi()  // Para a conversão de string para inteiro
-   - std::stod()  // Para a conversão de string para double
+   - *std::setw()*  // Para o ajuste da largura das tabelas (exibição)
+   - *std::setprecision()*  // Para mostrar os números com apenas 2 casas decimais
+   - *std::stoi()*  // Para a conversão de string para inteiro
+   - *std::stod()*  // Para a conversão de string para double
 
 
 ## Bugs/Limitações
