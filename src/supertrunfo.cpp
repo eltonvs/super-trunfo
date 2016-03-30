@@ -10,12 +10,17 @@ const std::vector <std::string> attr_names = {"ID", "NAME", "COMPANY", "YEAR", "
 int main(int argc, char const *argv[]) {
     std::string cardsFileName;  // Holds the cards file name.
     auto N_PLAYERS(0), N_CARDS(0);
-    if (argc > 1) {
+    if (argc > 3) {
         cardsFileName = argv[1];
         N_PLAYERS     = std::stoi(argv[2]);
         N_CARDS       = std::stoi(argv[3]);
     } else {
         std::cerr << "No file specified\n";
+        exit(EXIT_FAILURE);
+    }
+
+    if (N_PLAYERS <= 0 || N_CARDS <= 0) {
+        std::cerr << "The number of cards/players cannot be less than 1\n";
         exit(EXIT_FAILURE);
     }
 
