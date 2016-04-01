@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]) {
         std::cerr << "The number of cards/players cannot be less than 1\n";
         exit(EXIT_FAILURE);
     }
-    
+
     if (IA_FLAG)
         std::cout << ">>> Running with IA\n";
 
@@ -50,7 +50,7 @@ int main(int argc, char const *argv[]) {
         myGame.addPlayer(new ST_Player("Player #" + std::to_string(i + 1)));
 
     // (5): Deal the same amount of cards to all players.
-    if (!myGame.dealCards(N_CARDS)) { // Deals N_CARDS to each player.
+    if (!myGame.dealCards(N_CARDS)) {  // Deals N_CARDS to each player.
         std::cerr << "Error at dealCards()\n";
         exit(EXIT_FAILURE);
     }
