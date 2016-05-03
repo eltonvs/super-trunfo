@@ -8,4 +8,4 @@ compiler:
   - clang
 
 script:
-  - clang++ -std=c++11 src/* -I include -o supertrunfo && ./supertrunfo cards.dat 4 8
+  - clang++ -std=c++11 src/* -I include -o supertrunfo && ./supertrunfo cards.dat 4 6

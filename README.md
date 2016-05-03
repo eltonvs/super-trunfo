@@ -1,5 +1,7 @@
 # Super Trunfo
 
+[![Build Status](https://travis-ci.org/eltonvs/super_trunfo.svg?branch=master)](https://travis-ci.org/eltonvs/super_trunfo)
+
 ## Descrição
 **Super Trunfo** é um jogo de cartas que pode ser jogado por 2 ou mais pessoas.
 
