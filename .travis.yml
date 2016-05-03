@@ -7,9 +7,6 @@ language:
 compiler:
   - clang
 
-install:
-  - sudo apt-get install -qq g++-4.8
-
 script:
   - make clean
   - clang++ -std=c++11 src/* -I include -o supertrunfo && ./supertrunfo cards.dat 4 8
