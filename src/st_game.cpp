@@ -8,7 +8,7 @@
 #include "st_game.hpp"
 
 // Methods
-int ST_Game::run(bool IA) {
+int ST_Game::run(const bool &IA) {
     int n_rounds = 0;
     int round_winner = 0;
 
@@ -108,7 +108,7 @@ void ST_Game::addPlayer(ST_Player *_p) {
     this->m_players.push_back(*_p);
 }
 
-bool ST_Game::dealCards(int k) {
+bool ST_Game::dealCards(const int &k) {
     auto n_players = this->m_players.size();
     // Run tests
     if (this->m_cards.size() < k*n_players)
@@ -128,7 +128,7 @@ bool ST_Game::dealCards(int k) {
     return true;
 }
 
-void ST_Game::displayDeck() {
+void ST_Game::displayDeck() const {
     std::cout << ">>> The deck of ST cards read from file:\n";
     std::cout << std::string(4, ' ')
               << std::string(4, '=')  << "+" << std::string(32, '=') << "+"
@@ -160,7 +160,7 @@ void ST_Game::displayDeck() {
     std::cout << ">>> Deck size is: " << this->m_cards.size() << "\n\n";
 }
 
-void ST_Game::displayPlayers (){
+void ST_Game::displayPlayers () const {
     for (auto i(0u); i < this->m_players.size(); i++) {
         if (this->m_players[i].get_nCards() > 0) {
             std::cout << std::string(4, ' ') << "Player " << '"'
@@ -173,7 +173,7 @@ void ST_Game::displayPlayers (){
     }
 }
 
-void ST_Game::displayStatusRound() {
+void ST_Game::displayStatusRound() const {
     std::cout << std::string(4, ' ') << "Players still playing: "
               << this->m_players.size() << "\n"
               << std::string(4, ' ') << "Current player is : \""
@@ -182,7 +182,7 @@ void ST_Game::displayStatusRound() {
               << attr_names[this->m_chosen_attr] << "\".\n\n";
 }
 
-void ST_Game::displayCardsOnTable() {
+void ST_Game::displayCardsOnTable() const {
     std::cout << std::string(4, ' ')
               << "Cards put down on the table for this round:\n";
     std::cout << std::string(4, ' ')

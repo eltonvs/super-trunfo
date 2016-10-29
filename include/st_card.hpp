@@ -11,11 +11,13 @@ class ST_Card {
     enum attribute_t {ID, NAME, COMPANY, YEAR, SPEED, RANGE, LENGTH, WINGSPAN, N_ATTR};
 
     // Constructors
-    ST_Card(std::string, std::string, std::string, std::string, std::string, std::string, std::string, std::string);
-    ST_Card(std::vector <std::string>);
+    ST_Card(const std::string&, const std::string&, const std::string&,
+    	    const std::string&, const std::string&, const std::string&,
+    	    const std::string&, const std::string&);
+    ST_Card(const std::vector<std::string>&);
 
     // Getter
-    std::string getAttribute(attribute_t);
+    std::string getAttribute(const attribute_t&) const;
 
     // Method
     void displayCard() const;

@@ -7,21 +7,21 @@
 class ST_Player {
  public:
     // Constructor
-    ST_Player(std::string name);
+    ST_Player(const std::string&);
     // Getters
-    std::string name();
-    int get_nCards();
+    std::string name() const;
+    int get_nCards() const;
     // Setters
-    void addCard(ST_Card);
+    void addCard(const ST_Card&);
     // Methods
     ST_Card pop_card();
-    ST_Card::attribute_t chooseRandomAttrib();
-    void displayCards();
-    void chooseCardAI(ST_Card::attribute_t);
+    ST_Card::attribute_t chooseRandomAttrib() const;
+    void displayCards() const;
+    void chooseCardAI(const ST_Card::attribute_t&);
 
  private:
     std::string m_name;
-    std::vector <ST_Card> m_cards;
+    std::vector<ST_Card> m_cards;
 };
 
 #endif
