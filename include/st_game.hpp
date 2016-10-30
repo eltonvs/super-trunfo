@@ -9,15 +9,15 @@
 class ST_Game {
  public:
     // Methods
-    int run(bool = false);
+    int run(const bool& = false);
     ST_Player* winner();
     bool readDeckFromFile(std::ifstream &);
     void addPlayer(ST_Player *);
-    bool dealCards(int);
-    void displayDeck();
-    void displayPlayers();
-    void displayStatusRound();
-    void displayCardsOnTable();
+    bool dealCards(const int&);
+    void displayDeck() const;
+    void displayPlayers() const;
+    void displayStatusRound() const;
+    void displayCardsOnTable() const;
 
  private:
     int m_curr_player = 0;

@@ -6,26 +6,26 @@
 #include "st_player.hpp"
 
 // Constructor
-ST_Player::ST_Player(std::string name) {
+ST_Player::ST_Player(const std::string& name) {
     this->m_name = name;
 }
 
 // Getters
-std::string ST_Player::name() {
+std::string ST_Player::name() const {
     return this->m_name;
 }
-int ST_Player::get_nCards() {
+int ST_Player::get_nCards() const {
     return this->m_cards.size();
 }
 
 // Setters
-void ST_Player::addCard(ST_Card _card) {
+void ST_Player::addCard(const ST_Card &_card) {
     this->m_cards.push_back(_card);
 }
 
 // Methods
 ST_Card ST_Player::pop_card() {
-    std::vector <std::string> card;
+    std::vector<std::string> card;
     for (auto i(0u); i < ST_Card::N_ATTR; i++)
         card.push_back(this->m_cards[0].getAttribute((ST_Card::attribute_t)i));
     ST_Card r(card);
@@ -35,13 +35,13 @@ ST_Card ST_Player::pop_card() {
     return r;
 }
 
-ST_Card::attribute_t ST_Player::chooseRandomAttrib() {
+ST_Card::attribute_t ST_Player::chooseRandomAttrib() const {
     std::random_device r;
     int random_int = abs(r());
     return (ST_Card::attribute_t)((random_int%4) + 4);
 }
 
-void ST_Player::displayCards() {
+void ST_Player::displayCards() const {
     std::cout << std::string(4, ' ')
               << std::string(4, '=')  << "+" << std::string(32, '=') << "+"
               << std::string(30, '=') << "+" << std::string(10, '=') << "+"
@@ -71,7 +71,7 @@ void ST_Player::displayCards() {
               << std::string(8, '-')  << "+" << std::string(9, '-')  << "\n";
 }
 
-void ST_Player::chooseCardAI(ST_Card::attribute_t attrib) {
+void ST_Player::chooseCardAI(const ST_Card::attribute_t &attrib) {
     // Define best option
     auto position(0u);
 

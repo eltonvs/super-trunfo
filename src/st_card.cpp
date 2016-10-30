@@ -1,12 +1,11 @@
 #include <iostream>
 #include <iomanip>
-#include <string>
 #include "st_card.hpp"
 
 // Constructors
-ST_Card::ST_Card(std::string _id, std::string _name,
-    std::string _company, std::string _year, std::string _speed,
-    std::string _range, std::string _length, std::string _wingspan) {
+ST_Card::ST_Card(const std::string &_id, const std::string &_name,
+    const std::string &_company, const std::string &_year, const std::string &_speed,
+    const std::string &_range, const std::string &_length, const std::string &_wingspan) {
 
     this->m_attr.resize(ST_Card::N_ATTR);
 
@@ -19,7 +18,8 @@ ST_Card::ST_Card(std::string _id, std::string _name,
     this->m_attr[ST_Card::LENGTH]   = _length;
     this->m_attr[ST_Card::WINGSPAN] = _wingspan;
 }
-ST_Card::ST_Card(std::vector<std::string> _attr) {
+
+ST_Card::ST_Card(const std::vector<std::string> &_attr) {
     this->m_attr.resize(ST_Card::N_ATTR);
 
     this->m_attr[ST_Card::ID]       = _attr[ST_Card::ID];
@@ -33,7 +33,7 @@ ST_Card::ST_Card(std::vector<std::string> _attr) {
 }
 
 // Getter
-std::string ST_Card::getAttribute(ST_Card::attribute_t _at) {
+std::string ST_Card::getAttribute(const ST_Card::attribute_t &_at) const {
     return this->m_attr[_at];
 }
 
