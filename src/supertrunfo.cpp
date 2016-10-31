@@ -24,7 +24,7 @@ int main(int argc, char const *argv[]) {
     }
 
     if (N_PLAYERS <= 0 || N_CARDS <= 0) {
-        std::cerr << "The number of cards/players cannot be less than 1\n";
+        std::cerr << "The number of cards or players cannot be less than 1\n";
         exit(EXIT_FAILURE);
     }
 
